@@ -1,0 +1,27 @@
+h2{
+    text-align: center;
+    border: solid;
+    background-color: sandybrown;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+
+.bulb{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.bulb img{
+    margin-bottom: 20%;
+}
+button{
+    width: 100px;
+    background-color: sandybrown;
+}
+
+html{
+    background-color: white;
+}
