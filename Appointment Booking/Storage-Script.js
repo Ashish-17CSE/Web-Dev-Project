@@ -8,6 +8,7 @@ submit.addEventListener('click', (e) => {
     let date = document.getElementById("date").value;
     let time = document.getElementById("time").value;
     let query = document.getElementById("query").value;
+    let subject = document.getElementById("subject").value;
 
 
     localStorage.setItem("Name", name);
@@ -15,6 +16,7 @@ submit.addEventListener('click', (e) => {
     localStorage.setItem("Time", time);
     localStorage.setItem("Date", date);
     localStorage.setItem("Number", number);
-    localStorage.setItem("query", query);
+    localStorage.setItem("Query", query);
+     localStorage.setItem("Subject", subject);
     
 });
