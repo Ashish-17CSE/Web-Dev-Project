@@ -11,12 +11,27 @@ submit.addEventListener('click', (e) => {
     let subject = document.getElementById("subject").value;
 
 
-    localStorage.setItem("Name", name);
-    localStorage.setItem("Email", email);
-    localStorage.setItem("Time", time);
-    localStorage.setItem("Date", date);
-    localStorage.setItem("Number", number);
-    localStorage.setItem("Query", query);
-     localStorage.setItem("Subject", subject);
+//     localStorage.setItem("Name", name);
+//     localStorage.setItem("Email", email);
+//     localStorage.setItem("Time", time);
+//     localStorage.setItem("Date", date);
+//     localStorage.setItem("Number", number);
+//     localStorage.setItem("Query", query);
+//     localStorage.setItem("Subject", subject);
+    
+    // storing the data in object format
+    
+    let profile = {
+        Name : name, 
+        Email : email, 
+        Number : number, 
+        Data : date,
+        Time : time, 
+        Query : query, 
+        Subject : subject
+    }
+
+//     console.log(profile);
+    localStorage.setItem("profile_data",JSON.stringify(profile))
     
 });
