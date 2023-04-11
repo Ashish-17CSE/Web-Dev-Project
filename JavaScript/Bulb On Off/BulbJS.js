@@ -2,10 +2,12 @@
 const bulbBtn = document.querySelector('#BulbBtn')
 const bulbImg = document.querySelector('#BulbImg')
 
-bulbBtn.addEventListener('click', function () {
-    console.log(bulbImg.src);
+let isOff = true;
 
-    if(bulbImg.src.match('off')){
+bulbBtn.addEventListener('click', function () {
+    //console.log(bulbImg.src);
+
+    if(isOff){
         bulbImg.src = './bulb-on.gif';
         bulbBtn.innerHTML = "Turn off"
     }
@@ -13,5 +15,5 @@ bulbBtn.addEventListener('click', function () {
         bulbImg.src = './bulb-off.gif';
         bulbBtn.innerHTML = "Turn on"
     }
-    
+    isOff = !isOff    
 });
