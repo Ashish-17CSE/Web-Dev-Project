@@ -1,4 +1,4 @@
-## Storing JavaScript objects in localStorage.
+## Storing user Details in localStorage.
 ![image](https://user-images.githubusercontent.com/68491332/231858248-2fda81c2-b5a4-4ae9-bb32-1bbfb6fd4973.png)
 
 
