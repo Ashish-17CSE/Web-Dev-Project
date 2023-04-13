@@ -12,3 +12,8 @@
 ![image](https://user-images.githubusercontent.com/68491332/231853928-2a5ebc38-2d8b-4fc0-905b-f6fce822912e.png)
 #
 ![apture](https://user-images.githubusercontent.com/68491332/231855294-580ca492-0c81-4198-b4ca-86e0ef5cf00c.PNG)
+
+#
+## Registration Form
+![image](https://user-images.githubusercontent.com/68491332/231859524-f529dee6-bd1c-49a4-9ad8-6dbc2ef5fbd3.png)
+
