@@ -25,14 +25,34 @@ function readDate(){
     user["number"] = document.getElementById("number").value;
     user["subject"] = document.getElementById("subject").value;
     user["Message"] = document.getElementById("Message").value;
+    
+    // LOCAL STORAGE 
     // localStorage.setItem(user.number, JSON.stringify(user))
-    axios.post('https://crudcrud.com/api/2b5bcf8eed7048fdbe1639b17e7fdbf8/appointmentData', user)
+    
+    // POST Method with 'axios'
+    /*axios.post('https://crudcrud.com/api/2b5bcf8eed7048fdbe1639b17e7fdbf8/appointmentData', user)
         .then((response) => {
             console.log(response)
         }).catch((err) => {
             console.log(err)
+        })*/
+        
+        
+        // GET Method with 'axios'
+   axios.get('https://crudcrud.com/api/3cbfc79cf14948dc808edbd5847ed195/appointmentData', user)
+        .then((response) => {
+            console.log(response)
+            for (var i=0; i<response.data.length; i++){
+                insertdata(response.data[i])
+            }
+        }).catch((err) => {
+            console.log(err)
         })
-    return user;
+        
+        
+        
+        
+    return user;   
 }
 
 function insertdata(value){
