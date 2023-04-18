@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+
+    <style>
+        table{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            font-style: italic;
+            padding-left: 5%;
+        }
+        body{
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+        /* tr:nth-child(even){
+            background-color: #dddddd;
+        } */
+    </style>
+</head>
+
+<body>
+    <h1><i>Filterable Table</i></h1>
+    <p><i>Type something in the input field to search the table for first names, last names or emails : </i></p>
+    <input type="text" class="text" id = "search" placeholder="Search..."><br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Designation</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>Ashish</td>
+                <td>Akela</td>
+                <td>ashish1a@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Ayush</td>
+                <td>gupta</td>
+                <td>ayush1gupta@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Akash</td>
+                <td>raj</td>
+                <td>akash1raj@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Baba</td>
+                <td>khan</td>
+                <td>baba1khan@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Ram</td>
+                <td>Raja</td>
+                <td>ram1raja@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#search").on("keyup", function(){
+            var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(value)>-1); // all the "tr" text getig in lower case
+          })  
+        })
+    })
+</script>
+
+</html>
