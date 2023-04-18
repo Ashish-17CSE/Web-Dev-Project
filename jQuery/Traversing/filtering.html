@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Filtering</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+
+    <style>
+        div {
+            border: 1px solid black;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+            font-size: larger;
+            /* background-color:aliceblue; */
+        }
+
+        a {
+            margin-left: 10%;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <a>The <b><i>first(), Last(), eq(), filter()</i></b> and <b><i>not()</i></b> Methods</a><br><br>
+    <!-- <div>
+        <p>A paragraph in a 'div'.</p>
+        <p>Another paragraph in a 'div'.</p>
+    </div><br>
+
+    <div>
+        <p>A paragraph in a 'div'.</p>
+        <p>Another paragraph in a 'div'.</p>
+    </div><br>
+
+    <div>
+        <p>A paragraph in a 'div'.</p>
+        <p>Another paragraph in a 'div'.</p>
+    </div>
+    <br><br> -->
+
+    <p id="paraId">A paragraph with indexing : Index[0].</p>
+    <p id="paraId">A paragraph with indexing : Index[1].</p>
+    <p class="para">A paragraph with indexing : Index[2].</p>
+    <p class="para">A paragraph with indexing : Index[3].</p>
+    <p>A paragraph with indexing : Index[4].</p>
+    <p>A paragraph with indexing : Index[5].</p>
+    
+    <br>
+    <br>
+    
+    <p class="not">A paragraph with indexing : Index[#].</p>
+    <p class="not">A paragraph with indexing : Index[#].</p>
+    <p class="not">A paragraph with indexing : Index[#].</p>
+    <p class="not">A paragraph with indexing : Index[#].</p>
+
+
+</body>
+<script>
+    $(document).ready(function () {
+
+        // First() function
+        $("div").first().css("background-color", "violet")
+        // $("p").first().css("background-color", "violet")
+
+        // Last() function
+        $("div").last().css("background-color", "yellow")
+
+        // eq() fuction 
+        $("p").eq(5).css("background-color", "blue")
+
+        //filter() fuction 
+        $("p").filter(".para").css("background-color", "aqua")
+        $("p").filter("#paraId").css("background-color", "grey")
+
+        // not() function
+        $("p").not(".not").css("background-color", "teal")
+
+
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>parents</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+
+    <style>
+        .sty {
+            /* background: antiquewhite; */
+            margin: 10px;
+            padding: 15px;
+            border : 2px solid #ddd;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sty">
+        <ul class="sty"> (Grand-parent)
+            <li class="sty">(Parent)
+                <p class="sty">paragraph (child)</p>
+            </li>
+        </ul>
+    </div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        // $("P").parent().css({"color" : "blue", "border" : "2px solid red"});
+        // $("li").parent().css({"color" : "blue", "border" : "2px solid red"});
+        // $("p").parents().css({"border" : "2px solid red"});
+        // $("li").parents().css({ "border" : "2px solid red"});
+        // $("p").parents("ul").css({"border" : "2px solid red"});
+        $("p").parentsUntil("div").css({"border" : "2px solid red"});
+    })
+</script>
+
+</html>
