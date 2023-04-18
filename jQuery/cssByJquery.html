@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>CSSbyJquery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+</head>
+
+
+<body>
+    <h1> CSS by jQuery </h1>
+    <p id = "paraID"> Hello world ! </p>
+    <button id = "Click">Click me </button>
+</body>
+<script>
+    // var data = document.getElementById('paraID');
+    // data.style.backgroundColor = 'red'; 
+    // data.style.fontSize = '20px';
+
+    // In jQuery css("propertyName", "value");
+    // css({"propertyname" : "value", "propertyname" : "value", ... });
+    $(document).ready(function(){
+        // $("#paraID").css("background-color", "red")
+        $("#Click").click(function(){
+            $("#paraID").css({"background-color" : "blue", "color":"#FFF", "font-size" : "50Px"})
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Events.html</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <div>
+        <button id="btn"> Click </button>
+        <button id="btn2">Double Click </button>
+
+        <p id="para">This is jQuery mouse events</p>
+
+        <input type="text" id="text" value="" name=""> 
+        <span id="wel" style="display: none;">Welcome</span>
+        <span id="Thank" style="display: none;">Thank You!!</span>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#btn").click(function(){
+            alert("Hello, This is jQuery Click Event !")
+        })
+        
+        // Double Click Event
+        $("#btn2").dblclick(function(){
+            alert("Hello, This is jQuery Double Click Event !")
+        })
+
+        // Mouse Enter\Leave event
+        $("#para").mouseenter(function(){
+            $(this).css("background-color", "red")
+        })
+        $("#para").mouseleave(function(){
+            $(this).css("background-color", "blue")
+        })
+
+        // keydow and keyup evetr
+        /*$("#text").keydown(function(){
+            $(this).css("border", "2px solid red");
+        })
+        
+        $("#text").keyup(function(){
+            $(this).css("border", "4px solid green");
+        })*/
+
+        // Focus Method
+        $("#text").focus(function(){
+            // $("#wel").show();
+            $("#wel").fadeIn(1000);
+            $("#Thank").hide();
+
+        })
+        
+        // Blur Method
+        $("#text").blur(function(){
+            $("#wel").hide();
+            // $("#wel").fadeOut(1000);
+            $("#Thank").fadeIn(1000);
+
+        })
+    })
+</script>
+
+</html>

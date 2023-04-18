@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GET_Method</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+</head>
+<body>
+    <div>
+        Text() -: Sets or returns the text content of selected elements<br><br>
+        HTML() -: Sets or returns the content of selected elements 
+        (including HTML Markup)<br><br>
+        Val()  -: Sets or returns the value of from fields.
+    </div>
+
+    <p style="display: none;"> This is example of <b>get method<b> in <i>jquery</i> by TEXT </p>
+        <br><br>
+    <label>User Name : </label>
+    <input type="text" value="" name = "" id="Uname">
+    <button>Get Value</button>
+</body>
+<script>
+    $(document).ready(function(){
+        // var val = document.getElementById("para").value;
+
+        // var ptext = $("p").text(); // hear will not work "<b>" and "<i>" tags.
+        // var ptext = $("p").html(); // it will print as it's from the "p" tags.
+        // document.write(ptext)
+        // alert(ptext)
+
+        $("button").click(function(){
+            var formValue = $("#Uname").val();
+            alert(formValue);
+        })
+    })
+</script>
+</html>

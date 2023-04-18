@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Remove</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+
+    <style>
+        #box {
+            width: 60%;
+            height: 100px;
+            background: red;
+            margin-top: 2%;
+        }
+
+        p {
+            margin: 2%;
+            color: antiquewhite;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    Remove() -: Remove the selected elemet (and its child elements)<br><br>
+    Empty() -: Remove the child elements from the selected elements<br><br>
+
+    <button id="btn">Remove</button>
+    <div id="box">
+        <p>1. This is example of Remove function</p>
+        <p>2. This is example of Remove function</p>
+        <p class="test">3. This is example of Remove function</p>
+        <p class="test">4. This is example of Remove function</p>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function(){
+            // $("#box").remove();
+            // $("#box").empty();
+            $("p").remove(".test"); // "test" is a class of lin 3 and 4.
+        })
+    })
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaining Method</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+</head>
+<body>
+    <div>
+        <button>Click</button>
+        <p>This is jquery Chaining Method and this is 'p' tag</p>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            // $("p").css("color", "violet").hide(2000).show(2000) // This is called chaining
+            $("p").css("color", "violet").hide(2000).slideUp(2000).slideDown(2000)
+        })
+    });
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Append_Prepend</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+</head>
+<body>
+    
+    <p>
+        <i>
+            <b>What is Lorem Ipsum?</b><br>
+        </i>
+    </p>
+    <button id = "TextBtn">Read More</button>
+
+    <ol>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+    </ol>
+    <button id="ListBtn"> Append List</button>
+</body>
+<script>
+    $(document).ready(function(){
+        $("#TextBtn").click(function(){
+            $("p").append("<i>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</i>")});
+       
+        $("#ListBtn").click(function(){
+            // $("ol").append("<li> Appended Item </li>");
+            // $("ol").prepend("<li> Prepend Item </li>");
+            $("ol").prepend("<li> <input type  = 'text'></li>");
+        })
+    })
+</script>
+</html>

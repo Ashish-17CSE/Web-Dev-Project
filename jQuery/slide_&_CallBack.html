@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" 
+    integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+    crossorigin="anonymous">
+    </script>
+
+
+    <style>
+        #panel, #flip{
+            padding: 10px;
+            background: aqua;
+            text-align:  center;
+            border: 1px solid black;
+            margin: 1%;
+        }
+        #panel{
+            padding: 60px;
+            /* display: none; */
+            background-color: brown;
+        }
+        button{
+            border-color: blue;
+            border-width:4px;
+            width: 200px;
+            padding: 2%;
+            margin-left: 215px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <button id="Stop">Stop slide</button>
+    <div id = "flip"> Click hear to slide panel</div>
+    <div id = "panel">Hello Dear</div>
+    <p style="margin: 10px; overflow-wrap: break-all;">It is a long established fact that a reader will be 
+        distracted by the readable content of a page when looking 
+        at its layout. The point of using Lorem Ipsum is that it has 
+        a more-or-less normal distribution of letters, as opposed to using 
+        'Content here, content here', making it look like readable English. 
+        Many desktop publishing packages and web page editors now use Lorem 
+        Ipsum as their default model text, and a search for 'lorem ipsum' 
+        will uncover many web sites still in their infancy.
+    </p>
+    <button id="HideText">Hide Text</button>
+
+    
+</body>
+
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#flip").click(function(){
+            // $("#panel").slideDown(3000)
+            // $("#panel").slideUp(3000)
+            $("#panel").slideToggle(3000)
+        })
+
+        $("#Stop").click(function(){
+            $("#panel").stop();
+        })
+
+
+
+        // Call Back
+        $("#HideText").click(function(){
+            $('p').hide("slow", function(){ // call back function used
+            // $('p').slideToggle("slow", function(){ 
+                alert("Jquery callback function the para is hide now");
+            })
+        })
+    })
+</script>
+</html>

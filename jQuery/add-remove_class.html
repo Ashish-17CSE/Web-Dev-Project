@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AddRemoveClass</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+    <style>
+        .modify{
+            font-size: 20px;
+            color: violet;
+            /* background: aqua; */
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: center;
+            
+        }
+        .modify2{
+            background: aqua;
+        }
+        .box{
+            font-size: 20px;
+            margin-left: 40%;
+            margin-right: 40%;
+            margin-top: 4%;
+            /* width: 60%; */
+            height: 30px;
+            background: red;
+            text-align: center;
+            margin: 2%;
+        }
+        button{
+            margin-left: 20%;
+            margin-top: 2%;
+            
+            /* display:inline-flex;           */
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1 class="modify">Add Class for jQuery</h1>
+    <p class="modify">Add Class for para..</p> -->
+    <h1>This is first Header 'H1' tag</h1>
+    <p>this is a paragraph 'p' tag</p>
+    <button id="Add">Add Style</button>
+    <button id ="Remove">Remove Style</button>
+    <button id ="AddRemove">Add/Remove Style</button>
+    <div>This is "div" tag </div>
+    <button id = "divStyle"> divStyle </button>
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $("#Add").click(function(){
+            $("h1, p, button").addClass("modify");
+            // $("button").addClass("button");
+        })
+        
+        $("#Remove").click(function(){
+            $("h1, p, button").removeClass("modify");
+            // $("button").removeClass("button");
+        })
+
+        $("#AddRemove").click(function(){
+            $("h1, p").toggleClass("modify modify2")
+        })
+
+        $("#divStyle").click(function(){
+            $("div").toggleClass("box")
+        })
+    })
+</script>
+</html>

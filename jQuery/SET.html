@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SET_Method</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+</head>
+<body>
+    <button>SET</button>
+    <p></p>
+    
+    <input type="text" value="" id="Uname" name = "">
+    <button id="setInValue">Set</button>
+   
+</body>
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            // $("p").text("Hello, This is jQuery text");
+            $("p").html("Hello, This is <i><b>jQuery</b></i> text");
+        })
+
+        $("#setInValue").click(function(){
+            $("#Uname").val("Hello World!")
+        })
+    })
+</script>
+</html>

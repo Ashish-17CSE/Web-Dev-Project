@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--<script>
+
+        $(document).ready(function () { // jab document ready ho jaye ga toab JS code rune krega 
+            $("#colored-div").on({
+                click: function () {
+                    $(this).css("background-color", "green");
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "blue");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "yellow");
+                }
+            });
+        })
+
+    </script> -->
+
+</head>
+
+<body>
+    <script>
+        // $(document).ready(function(){
+        //     alert("ok")
+        // });
+    </script>
+
+    <!-- 1. Select html element <br> -->
+    <!-- 2. perform jquery function/or action on selecte element -->
+
+
+    <p id='pra'>This is a p tag</p>
+    <button id="btn1">Button1</button>
+    <button id="btn2">Button2</button><br><br>
+    <div id="colored-div" style="background-color: brown; height: 100px; width: 100px; text-align: center;">Hello</div>
+
+    <div>
+        <br><input type="text" id="input1">
+    </div>
+
+    <script>
+        $("#btn1").click(function () {
+            // $("#colored-div").fadeTo(1000, 0.3);
+            // $("#colored-div").fadeToggle(1000);
+            // $("#colored-div").html("<h1>headig</h1>")
+            /*var vlaue = */ $("#input1").val("Ashish");
+            // alert(vlaue);
+        });
+
+        $("#btn2").click(function () {
+            $("#colored-div").slideToggle(2000);
+        });
+    </script>
+</body>
+
+</html>

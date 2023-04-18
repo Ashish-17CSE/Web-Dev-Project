@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ON Method</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+        </script>
+        
+    <style></style>
+
+</head>
+<body>
+    <div>
+        <p id="para">This is <b><i>jQuery</i></b> event</p>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        /*$("#para").on("click", function(){
+            alert("On Method in jQuery Events")
+        })
+        
+        $("#para").on("mouseenter", function(){
+            $(this).css("background-color", "silver")
+        })*/
+
+        // real Use of "on" method
+        $("#para").on({
+            mouseover : function(){
+                $(this).css("background-color", "silver")
+            },
+            mouseout : function(){
+                $(this).css("background-color", "transparent")
+            },
+            click : function(){
+                alert("On Method in jQuery Events")
+            }
+        })
+    })
+</script>
+</html>
