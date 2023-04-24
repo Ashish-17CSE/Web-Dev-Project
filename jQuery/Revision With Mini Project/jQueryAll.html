@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>jQuery</title>
+
+    <!-- Jquery Library  -->
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous">
+    </script>
+
+    <style>
+        #colored-div {
+            background-color: brown;
+            height: auto;
+            width: auto;
+            color: aliceblue;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        #textArea {
+            padding: 2%;
+            box-shadow: -1px 0 black, 0 5px black, 5px 0 black, 0 -1px black;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            border-top-right-radius: 7px
+        }
+
+        li {
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+
+        body {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        button {
+            margin-top: 1%;
+            /* padding: 2%; */
+            box-shadow: 0 0 black, 0 0.5px black, 0.5px 0 black, 0 0 black;
+            border-bottom-right-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-top-right-radius: 4px
+        }
+    </style>
+</head>
+
+<body>
+
+    <i>1. Select html element </i><br><br>
+    $("#selector").action() //<i>jquery Synatx </i><br><br>
+    <i>2. Perform jquery function/or action on selected element </i><br><br>
+
+    <!-- <p id="para">this is p1</p>
+    <p id="para">this is p2</p>
+    <p class="black">this is p3</p>
+    <p class="black">this is p4</p>
+    <a href="#" class="black">link</a> -->
+
+    <!-- <p id="pra">this is a p tag</p>
+    <button id="btn">Click</button><br><br>
+    <div id="colored-div"></div><br><br>
+    <script>
+        $(document).ready(function () {
+            $("#colored-div").on({
+                click: function () {
+                    $(this).css("background-color", "blue")
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "green")
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "yellow")
+                }
+            })
+        })
+
+    </script> -->
+
+    <div>
+        <button id="HidwBtn">Hide / FadeIn</button>
+        <button id="ShowBtn"> Show / FadeOut</button>
+        <button id="ToggleBtn">Toggle</button>
+        <button id="opacity">fadeTo</button>
+        <button id="SlideUp">SlideUp</button>
+        <button id="SlideDow">SlideDow</button>
+        <button id="SlideToggle">SlideToggle</button>
+        <button id="Animations">Animations</button>
+        <button id="Stop">Stop</button>
+        <button id="Callback">Callback</button>
+        <button id="Chaining">Chaining</button>
+        <button id="reset">Reset</button>
+    </div>
+    <br><br>
+    <div id="colored-div">
+        <div id="textArea">
+            <ul>
+                <li>hide() and show() method</li>
+                <li>fadeIn(), fadeOut(), fadeToggle(), fadeTo()</li>
+                <li>slideUp(), slideDown(), slideToggle()</li>
+                <li>animate() Method is used to create custom animations.</li>
+                <li>stop() method is used to stop animations or effects before it is finished.</li>
+                <li>A callback function is executed after the current effect is 100% finished.</li>
+                <li>Chaining allows us to run multiple jQuery methods (on the same element) within a single statement.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Hide / Show function
+        /*$("#HidwBtn").click(function(){
+            $("#colored-div").hide(1000);
+        })
+        
+        $("#ShowBtn").click(function(){
+            $("#colored-div").show(2000);
+        })*/
+
+
+        // fadeIn / fadeOut function and Toggle function
+        $("#HidwBtn").click(function () {
+            $("#colored-div").fadeOut(1000);
+        })
+        $("#ShowBtn").click(function () {
+            $("#colored-div").fadeIn(2000);
+        })
+        $("#ToggleBtn").click(function () {
+            $("#colored-div").fadeToggle(1000);
+        })
+        // fadeTo() method allows fading to a given opacity (value between 0 and 1).
+        $("#opacity").click(function () {
+            $("#colored-div").fadeTo(1000, 0.4);
+        })
+
+
+        // SlideUp, SlideDown, SlideToggle
+        $("#SlideUp").click(function () {
+            $("#colored-div").slideUp(1000);
+        })
+        $("#SlideDow").click(function () {
+            $("#colored-div").slideDown(1000);
+        })
+        $("#SlideToggle").click(function () {
+            $("#colored-div").slideToggle(1000);
+        })
+
+        // jQuery  Animations - The animate() Method is used to create custom animations.
+        $("#Animations").click(function () {
+            $("#colored-div").animate({
+                opacity: '0.5',
+                height: "200px",
+                width: '50px'
+            }, 3000)
+        })
+
+        $("#Stop").click(function () {
+            $("#colored-div").stop();
+        })
+
+        // Callback Functions
+        $("#Callback").click(function () {
+            $("#colored-div").hide(3000, function () {
+                alert("Now Div is hidden")
+            })
+        })
+
+        // Chaining
+        $("#Chaining").click(function () {
+            $("#colored-div")
+                .css({
+                    "background": "teal",
+                    "color": "blue"
+                })
+                .slideUp(2000)
+                .slideDown(1000);
+
+        })
+
+        // Refresh/Reload the page on clicking a button
+        $("#reset").click(function () {
+            // location.reload();
+            window.location.reload(true);
+        })
+
+    </script>
+
+
+
+    <!-- jQuery DOM Manipulation -->
+
+    <style>
+        #heding {
+            padding-top: 5%;
+            color: blue;
+        }
+
+        #Horizontal_Line {
+            border-top: 2px solid #595959;
+        }
+
+        #dom-div {
+            background-color: rgba(255, 253, 127, 0.464);
+            height: auto;
+            width: auto;
+            color: black;
+            margin-bottom: 2%;
+        }
+
+        #Change_div {
+            /* margin-top: 4%; */
+            /* background-color: blanchedalmond; */
+            height: auto;
+            width: auto;
+            color: black;
+            text-align: center;
+            padding: 2%;
+            border: 2px solid rgba(0, 0, 0, 0.692);
+            margin-bottom: 2%;
+            border-radius: 2px 10px;
+        }
+
+        #domTextArea {
+            padding: 2%;
+            box-shadow: -1px 0 black, 0 5px black, 5px 0 black, 0 -1px black;
+            border-bottom-right-radius: 7px;
+            border-bottom-left-radius: 7px;
+            border-top-right-radius: 7px
+        }
+    </style>
+
+    <h2 id="heding"><i><b>3. </b> jQuery DOM Manipulation </i></h2>
+    <h1 id="Horizontal_Line"></h1>
+
+    <div id="dom-div">
+        <div id="domTextArea">
+            <button id="Dom_reset">Reset</button>
+            <p><b>DOM = Document Object Model</b><br><br>
+                The DOM defines a standard for accessing HTML and XML documents:<br><br>
+                <i>"The W3C Document Object Model (DOM) is a platform and
+                    language-neutral interface that allows programs and scripts to
+                    dynamically access and update the content, structure, and style of a document."
+                </i>
+            </p>
+            <h3>Get Content - text(), html(), and val()</h3>
+            <h4>Three simple, but useful, jQuery methods for DOM manipulation are:</h4>
+            <ul>
+                <li>text() - Sets or returns the text content of selected elements
+                    <button id="domTextBtn">.text()</button>
+                </li>
+                <li>html() - Sets or returns the content of selected elements (including HTML markup)
+                    <button id="domHtmlBtn">.html()</button>
+                </li>
+                <li>val() - Sets or returns the value of form fields</li>
+            </ul>
+
+            <div id="Change_div">
+                <p id="ChangeMe">Changing the paragraph by using .html or .text</p>
+                <button id="ChangeTextBtn">Change by .text</button>
+                <button id="ChangeHtmlBtn">Change by .html</button>
+            </div>
+
+            <div id="Change_div">
+                <h5>Get Value and Set Value</h5>
+                <label>Name : </label>
+                <input id="input1" type="text">
+                <button id="getVelue">Get Velue</button>
+                <button id="setVelue">Set Velue</button>
+
+                <p>attr() method is used to get attribute values.
+                    <a href="https://www.google.com" id="link" class="google">google.com</a>
+                    <button id="attr_Get">.attr-Get</button>
+                    <button id="attr_Set">.attr-Set</button>&emsp;&emsp;&emsp;
+                    <button id="set_get_reset">Reset</button>
+                </p>
+                <li>First click on '.attr-Get' it show you "https://www.google.com" in alert box. <br>
+                    If you click first on '.attr-Set' and then clicked on '.attr-Get' it will show
+                    'https://www.yahoo.com' in alert box.</li>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Refresh/Reload the page on clicking a button
+        $("#Dom_reset, #set_get_reset").click(function () {
+            location.reload();
+        })
+
+        // .text() ans .html() Function
+        $(document).ready(function () {
+            $("#domTextBtn").click(function () {
+                let domText = $("#dom-div").text();
+                alert(domText)
+            })
+            $("#domHtmlBtn").click(function () {
+                let domHtml = $("#dom-div").html();
+                alert(domHtml)
+            })
+
+            // Changing HTML Tag  or text also
+            $("#ChangeTextBtn").click(function () {
+                // $("#dom-div").html("<h1>changed by .HTML</h1>");
+                $("#ChangeMe").text("changed by .text");
+            })
+            $("#ChangeHtmlBtn").click(function () {
+                $("#ChangeMe").html("<h4>changed by .HTML</h4>");
+                // $("#Change_div").text("changed by .text");
+            })
+
+            // Set and Get Value
+            $("#getVelue").click(function () {
+                let inputVal = $("#input1").val();
+                if (inputVal.trim() != null && inputVal.trim() != "") {
+                    alert(inputVal.replace(/\s+/g, " "))
+                }
+                else {
+                    alert("Please Enter any value or a Name")
+                }
+                $("#input1").val("")
+            })
+            //set Valuse
+            $("#setVelue").click(function () {
+                $("#input1").val("Ashish");
+            })
+
+            // attr() method is used to get attribute values.
+            $("#attr_Get").click(function () {
+                let GetLink = $("#link").attr("href");
+                alert(GetLink)
+            })
+            // attr() fetch
+            $("#attr_Set").click(function () {
+                // $("#link").attr("class", "Ashish")
+                $("#link").attr({
+                    "class": "Yahoo.com",
+                    "href": "https://www.yahoo.com"
+                }).text("yahoo.com")
+            })
+        })
+    </script>
+
+
+    <!-- // jQuery - Add Elements -->
+    <style>
+        #addHeading {
+            /* border: 2px solid rgb(132, 130, 238); */
+            padding-top: 1%;
+            padding-left: 2%;
+
+        }
+
+        #list_div {
+            height: auto;
+            width: auto;
+            color: black;
+            border: 2px solid rgba(0, 0, 0, 0.692);
+            margin-bottom: 2%;
+            border-radius: 2px 10px;
+            padding-left: 4%;
+        }
+    </style>
+
+    <div id="dom-div">
+        <h3 id="addHeading"># Add New HTML Content</h3>
+        <div id="domTextArea">
+            <ul>
+                <li>append() - Inserts content at the end of the selected elements</li>
+                <li>prepend() - Inserts content at the beginning of the selected elements</li>
+                <li>after() - Inserts content after the selected elements</li>
+                <li>before() - Inserts content before the selected elements</li>
+            </ul>
+            <!-- before -->
+            <div id="list_div">
+                <ul id="list">
+                    <!-- prepend -->
+                    <li>red</li>
+                    <li>Balck</li>
+                    <li>Green</li>
+                    <!-- append -->
+                </ul>
+            </div>
+
+            <!-- after -->
+            <ul>
+                <li>remove() - Removes the selected element (and its child elements)<br>
+                    Example -: $("#list").remove();
+                </li>
+                <li>empty() - Removes the child elements from the selected element <br>
+                    Example -: $("#list").empty()
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // append
+        $("#list").append("<li>Yellow -: append</li>")
+        // prepend
+        $("#list").prepend("<li>blue -: prepend</li>")
+        //after
+        $("#list").after("<p>After element </p>")
+        // before
+        $("#list").before("<p>Before element </p>")
+        // empty() fuction
+            // $("#list").empty()
+        // Remove
+            // $("#list").remove();
+
+    </script>
+
+
+    <!-- jQuery - Get and Set CSS Classes -->
+
+    <style>
+        .box {
+            margin-top: 3%;
+
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+    <div id="dom-div">
+        <h3 id="addHeading"># Get and Set CSS Classes</h3>
+        <div id="domTextArea">
+            <ul>
+                <li>addClass() - Adds one or more classes to the selected elements</li>
+                <li>removeClass() - Removes one or more classes from the selected elements</li>
+                <li>toggleClass() - Toggles between adding/removing classes from the selected elements</li>
+                <li>css() - Sets or returns the style attribute
+                </li>
+            </ul>
+            <div id="list_div" style="padding-bottom: 10px;">
+                <button id="CssClassReset">Reset</button>
+                <div id="box" class="box red"></div>
+                <button id="circleBtn">circle</button>
+                <button id="RemoveClass">RemoveClass</button>
+                <button id="ToggleClass">ToggleClass</button>
+                <button id="css">CSS</button>
+            </div>
+        </div>       
+    </div>
+
+    <script>
+        $("#CssClassReset").click(function () {
+            location.reload();
+        })
+        // Add class
+        $("#circleBtn").click(function () {
+            $("#box").addClass("circle black")
+        })
+
+        // Remove Class
+        $("#RemoveClass").click(function () {
+            $("#box").removeClass("red")
+        })
+
+        // Toggle Class
+        $("#ToggleClass").click(function () {
+            $("#box").toggleClass("red circle")
+        })
+
+        // css
+        $("#css").click(function () {
+            //    var cssValue = $("#box").css({
+            //     "background-color" : "yellow"
+
+            //    })
+            //    alert(cssValue)
+
+            $("#box").css({
+                "background-color": "yellow",
+                "border": "5px solid blue",
+                "border-radius": "25%"
+            })
+        })
+    </script>
+
+
+    <!-- jQuery --: Traversing HTML -->
+    <style>
+        #img_travtree {
+            height: auto;
+            width: auto;
+            text-align: center;
+            margin-bottom: 2%;
+        }
+
+        #TraversDiv {
+            background-color: whitesmoke;
+            height: auto;
+            width: auto;
+            color: black;
+            margin-bottom: 2%;
+        }
+    </style>
+    <div id="TraversDiv">
+        <h3 id="addHeading"># jQuery Traversing in HTML</h3>
+        <div id="domTextArea">
+            <div id="list_div">
+                <p>jQuery traversing, which means "move through",
+                    are used to "find" (or select) HTML elements based on
+                    their relation to other elements. Start with one selection
+                    and move through that selection until you reach the elements
+                    you desire.</p>
+            </div>
+            <div id="img_travtree">
+                <img src="https://www.w3schools.com/jquery/img_travtree.png">
+            </div>
+
+            <div id="list_div">
+                <ul>
+                    <li>The &lt;div&gt; element is the parent of &lt;ul&gt;, and an ancestor of everything inside of it
+                    </li>
+                    <li>The &lt;ul&gt; element is the parent of both &lt;li&gt; elements, and a child of &lt;div&gt;
+                    </li>
+                    <li>The left &lt;li&gt; element is the parent of &lt;span&gt;, child of &lt;ul&gt; and a descendant
+                        of &lt;div&gt;</li>
+                    <li>The &lt;span&gt; element is a child of the left &lt;li&gt; and a descendant of &lt;ul&gt; and
+                        &lt;div&gt;</li>
+                    <li>The two &lt;li&gt; elements are siblings (they share the same parent)</li>
+                    <li>The right &lt;li&gt; element is the parent of &lt;b&gt;, child of &lt;ul&gt; and a descendant of
+                        &lt;div&gt;</li>
+                    <li>The &lt;b&gt;"element is a child of the right &lt;li&gt; and a descendant of &lt;ul&gt; and
+                        &lt;div&gt;</li>
+                </ul>
+
+            </div>
+
+            <div id="list_div">
+                <h4>Traversing Up the DOM Tree</h4>
+                <p>Three useful jQuery methods for traversing up the DOM tree are:</p>
+                <ul>
+                    <li><b>parent() -: </b> <i> The parent() method returns the direct parent element of the selected
+                            element.
+                            <br>This method only traverse a single level up the DOM tree.</i></li>
+                    <li><b>Parents() -: </b><i> The parents() method returns all ancestor elements of the selected
+                            element,
+                            all the way up to the document's root element (&lt;html&gt;). </i></li>
+                    <li><b>parentsUntil() -: </b> <i>The parentsUntil() method returns all ancestor elements between two
+                            given arguments.</i></li>
+                </ul>
+                <h4>Traversing Down the DOM Tree</h4>
+                <ul>
+                    <li><b>children() -: </b><i>The children() method returns all direct children of the selected
+                            element.
+                            <br>This method only traverses a single level down the DOM tree.</i></li>
+                    <li><b>find() -: </b><i>The find() method returns descendant elements of the selected element, all
+                            the way down to the last descendant.</i></li>
+                </ul>
+            </div>
+
+            <div id="list_div">
+                <h4>Traversing Sideways in The DOM Tree</h4>
+                <p>With jQuery you can traverse sideways in the DOM tree to find siblings of an element.<br>
+                    Siblings share the same parent.
+                </p>
+                <ul>
+                    <li><b>siblings() -: </b><i>The siblings() method returns all sibling elements of the selected
+                            element.</i></li>
+                    <li><b>next() -: </b><i>The next() method returns the next sibling element of the selected
+                            element.</i></li>
+                    <li><b>nextAll() -: </b><i>The nextAll() method returns all next sibling elements of the selected
+                            element.</i></li>
+                    <li><b>nextUntil() -: </b><i>The nextUntil() method returns all next sibling elements between two
+                            given arguments.</i></li>
+                    <li><b>prev()</b>, <b>prevAll()</b>, <b>prevUntil() -: </b> <i>methods work just like the methods
+                            above but with reverse functionality: they return previous
+                            sibling elements (traverse backwards along sibling elements in the DOM tree, instead of
+                            forward).</i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <button id="TravExample">Example</button>
+            <script>
+                $(document).ready(function () {
+                    $(".childDiv").hide()
+                    $("#TravExample").click(function () {
+                        $(".childDiv").slideToggle()
+                    })
+                })
+            </script>
+        </div>
+
+        <div id="list_div" class="paretDiv childDiv">
+            <ul><!-- (GrandParent)-->
+                <li> <!-- (Parent)-->
+                    <span id="span1">Item 1</span><!-- (child)-->
+                </li>
+                <li><!-- (Parent)-->
+                    <span id="span2">Item 2</span>
+                </li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+
+                    // parent()
+                    // let elm = $("#span1").parent();
+                    // elm.css("border", "1px solid red")
+
+                    //parents()
+                    // let elm = $("#span1").parents();
+                    // elm.css("border", "1px solid red")
+
+                    // Parents Until
+                    // let elm = $("#span1").parentsUntil("div");
+                    // elm.css("border", "1px solid red")
+
+                    //children()
+                    // let elmChild = $(".childDiv").children();
+                    // elmChild.css("border", "2px solid green")
+
+                    //find()
+                    // let elmFind = $(".childDiv").find("#span2")
+                    // elmFind.css("border", "2px solid blue");
+                })
+            </script>
+
+            <ul id="siblingsList">
+                <li id="prevChild">child1</li>
+                <li>child2</li>
+                <li id="ChildItem1">child3</li>
+                <li>child4</li>
+                <li>child5</li>
+                <li id="ChildItem2">child6</li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+                    // siblings()
+                    // let SibElm = $("#ChildItem1").siblings()
+                    // SibElm.css("border", "2px solid gray")
+
+                    // next()
+                    // let nextElm = $("#ChildItem1").next()
+                    // let nextElm = $("#ChildItem1").next().next()
+                    // nextElm.css("border", "2px solid Lime")
+
+                    // nextAll()
+                    // let nextAllElm = $("#ChildItem1").nextAll()
+                    // nextAllElm.css("border", "2px solid purple")
+
+                    // nextUntil()
+                    // let nextUntilElm = $("#ChildItem1").nextUntil("#ChildItem2")
+                    // nextUntilElm.css("border", "2px solid maroon")
+
+                    // prevUntil()
+                    // let prevUntilElm = $("#ChildItem1").prevUntil("#prevChild")
+                    // prevUntilElm.css("border", "2px solid black")
+
+                    // prevAll()
+                    // let prevAllElm = $("#ChildItem1").prevAll()
+                    // prevAllElm.css("border", "2px solid red")
+
+                    // prevAll()
+                    let prevElm = $("#ChildItem1").prev()
+                    prevElm.css("border", "2px solid purple")
+                })
+            </script>
+        </div>
+    </div>
+
+ <!-- // No Conflict -->
+    <div id="AjaxDiv" style="background-color: aquamarine;">
+        <h3 id="addHeading">No Conflict</h3>
+        <div id="domTextArea">
+            <div id="list_div">
+                <h4>✔ The jQuery noConflict() Method</h4>
+                <p> <b>The noConflict() method releases the hold on the $ shortcut identifier, so that other scripts can use it.</b> </p>
+            </div>
+            <div id="Change_div">
+                <p id="praConflict">This is a p tag</p>
+                <button id ="btnConflict" >Click me</button>
+            </div>
+        </div>
+            <script>  
+            // $.noConflict();
+            
+            // $("#btnConflict").click(function(){
+            //     $("#praConflict").text("Text Changed")
+            // })
+            
+            // // RO // //
+            // jQuery("#btnConflict").click(function(){
+            //     jQuery("#praConflict").text("Text Changed")
+            // })
+
+            // // OR // // 
+            // const jQ = $.noConflict();
+            // jQ("#btnConflict").click(function(){
+            //     jQ("#praConflict").text("Text Changed !")
+            // })
+    </script>
+    </div>
+
+
+
+
+ <!-- jQuery - AJAX Introduction -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+   <!-- Font Awesome for loader -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <style>
+        #AjaxDiv {
+            background-color: bisque;
+            height: auto;
+            width: auto;
+            color: black;
+            margin-bottom: 2%;
+            border-top-left-radius: 10px;   
+            border-top-right-radius: 10px;        
+        }
+        /* CSS for the wrapper class */
+        .wrapper {
+        padding: 2%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-right: 4%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        }
+
+        /* CSS for the container class */
+        .container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        }
+
+        /* CSS for the user-table class */
+        .user-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        }
+
+        /* CSS for the table headers */
+        .user-table th {
+        padding: 10px;
+        background-color: #f2f2f2;
+        }
+
+        /* CSS for the table cells */
+        .user-table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        }
+
+        /* CSS for the loader-row class */
+        .loader-row {
+        background-color: #f2f2f2;
+        }
+        .d-none{
+            display: none;
+        }
+
+        /* CSS for the getDataBtn button */
+        #getDataBtn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        }
+
+        /* CSS for the getDataBtn button when it is hovered over */
+        #getDataBtn:hover {
+        background-color: #3e8e41;
+        }
+
+        /* CSS for the alert class */
+        .alert {
+        padding: 10px;
+        /* margin-bottom: 4%; */
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb; 
+        }
+
+        /* CSS for the alert-danger class */
+        .alert-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        }
+
+    </style>
+    <div id="AjaxDiv">
+        <h3 id="addHeading"># AJAX = Asynchronous JavaScript and XML.</h3>
+        <div id="domTextArea">
+            <h4>AJAX Introduction</h4>
+            <p>AJAX is the art of exchanging data with a server,
+                and updating parts of a web page - without reloading the whole page.</p>
+            <div id="list_div">
+                <h4>What is AJAX?</h4>
+                <p>AJAX <i>is about loading data in the background and display it on the webpage, without reloading the
+                        whole page</i></p>
+
+                <p>jQuery provides several methods for AJAX functionality.</p>
+                <p><i>With the jQuery AJAX methods, you can request text, HTML, XML, or JSON from a remote
+                    server using both HTTP Get and HTTP Post - And you can load the external data directly
+                    into the selected HTML elements of your web page!</i></p>
+            </div>  
+            <div id="list_div">
+                <div class="wrapper">
+                    <div class="container">
+                        <h3>User Listing</h3>
+                        <table class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="d-none loader-row">
+                                    <td colspan="3">
+                                        <i class="fa fa-spin fa-sync-alt fa-2x"></i>
+                                    </td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+                        <button id="getDataBtn">Get Data</button>
+                    </div>
+                </div>
+            </div>          
+        </div>
+        <script>
+            $(document).ready(function(){
+                $(window).on("load", function(){
+                    $("#getDataBtn").on('click', function(){
+                        $.ajax({
+                            url: "https://jsonplaceholder.typicode.com/users", //API URL
+                            type: "GET", // GET OR POST.
+
+                            beforeSend : function(){
+                                // This function calls before ajax API Hits
+                                // Here we have to show our loader
+                                $(".loader-row").removeClass("d-none")
+                            },
+                            success : function(response, status){
+                                // Once our API call send success
+                                // this function gets called.
+                                // console.log(response)
+                                $(".loader-row").addClass("d-none");
+                                let html = "";
+                                for(let i=0; i<response.length; i++){
+                                    const {id, name, email} = response[i];
+                                    html +=`
+                                    <tr>
+                                        <td>${id}</td>
+                                        <td>${name}</td>
+                                        <td>${email}</td>
+                                    </tr>
+                                    `
+                                }
+                                $('.user-table').find('tbody').append(html);
+                            },
+                            error: function(error, status){
+                                // IF our API get any error
+                                // this function gets called.
+                                // console.log(error)
+                                $(".loader-row").addClass("d-none");
+                                let html =`
+                                    <tr>
+                                        <td colspan="3">
+                                            <div class = "alert alert-danger">
+                                                Error while fetching data
+                                            </div>
+                                        </td>
+                                    </tr>`;
+                                $(".user-table").find("tbody").append(html);
+                            },
+                        });
+                    });
+                });
+            });
+        </script>
+    </div>
+
+ <!-- // jQuery Plugin -->
+    <style>
+        #PluginDiv {
+            background-color:#dac8e477;
+            height: auto;
+            width: auto;
+            color: black;
+            margin-bottom: 2%;
+            border-top-left-radius: 10px;   
+            border-top-right-radius: 10px;        
+        }
+    </style>
+    <div id="PluginDiv">
+        <h3 id="addHeading"># jQuery Plugin.</h3>
+        <div id="domTextArea">
+            <div id="list_div">
+                <h4>jQuery Plugin</h4>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
