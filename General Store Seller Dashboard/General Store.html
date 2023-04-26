@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Store</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+        <h2 class="header text-center text-white p-3 bg-success bg-gradient mt-3">General Store Seller Dashboard </h2>
+        <form class="row">
+            <div class="border p-3 row">
+
+                <div class="col">
+                    <label class="form-label">Item Name : </label>
+                    <input type="text" class="input form-control" id="ItemName">
+                </div>
+
+                <div class="col">
+                    <label class="form-label">Description : </label>
+                    <input type="text" class="input form-control" id="Description">
+                </div>
+
+                <div class="col">
+                    <label class="form-label">Price: </label>
+                    <input type="number" class="input form-control" id="Price">
+                </div>
+
+                <div class="col">
+                    <label class="form-label">Quantity : </label>
+                    <input type="number" class="input form-control" id="Quantity">
+                </div>
+            </div>
+            <div class="mt-3 container">
+                <button type="button" class="btn float-right btn-outline-primary">Add Item </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-5 p-2">
+        <table class="table table-bordered">
+            <thead class="table-success table-striped">
+                <tr>
+                    <th>#</th>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Price </th>
+                    <th>Quantity</th>
+                    <th scope="col">Buy1</th>
+                    <th scope="col">Buy2</th>
+                    <th scope="col">Buy3</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <td>
+                <th></th>
+                </td>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Array to store the items
+            var items = [];
+
+            // Counter variable to keep track of the number of items
+            var itemCount = 0;
+
+            // Function to add a new item
+            function addItem() {
+                var itemName = $("#ItemName").val();
+                var description = $("#Description").val();
+                var price = $("#Price").val();
+                var quantity = $("#Quantity").val();
+
+                // Create a new item object
+                var item = {
+                    id: ++itemCount,
+                    name: itemName,
+                    description: description,
+                    price: price,
+                    quantity: quantity
+                };
+
+                // Add the new item to the items array
+                items.push(item);
+
+                // Clear the input fields
+                $("#ItemName").val("");
+                $("#Description").val("");
+                $("#Price").val("");
+                $("#Quantity").val("");
+
+                // Update the table
+                updateTable();
+            }
+
+            // Function to update the table
+            function updateTable() {
+                // Clear the table
+                $("tbody").empty();
+
+                // Loop through the items array and add a row for each item
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+
+                    var row = $("<tr>");
+                    row.append($("<td>").text(item.id));
+                    row.append($("<td>").text(item.name));
+                    row.append($("<td>").text(item.description));
+                    row.append($("<td>").text(item.price));
+                    row.append($("<td>").text(item.quantity));
+
+                    // Add buttons for editing and deleting the item
+                    var editButton = $("<button>").text("Edit").addClass("btn btn-sm btn-outline-primary mr-1").click(editItem.bind(this, item));
+                    var deleteButton = $("<button>").text("Delete").addClass("btn btn-sm btn-outline-danger").click(deleteItem.bind(this, item.id));
+                    row.append($("<td>").append(editButton).append(deleteButton));
+
+                    $("tbody").append(row);
+                }
+            }
+
+            // Function to edit an item
+            function editItem(item) {
+                $("#ItemName").val(item.name);
+                $("#Description").val(item.description);
+                $("#Price").val(item.price);
+                $("#Quantity").val(item.quantity);
+
+                // Remove the item from the array
+                items = items.filter(function (el) {
+                    return el.id !== item.id;
+                });
+
+                // Update the table
+                updateTable();
+            }
+
+            // Function to delete an item
+            function deleteItem(itemId) {
+                // Remove the item from the array
+                items = items.filter(function (el) {
+                    return el.id !== itemId;
+                });
+
+                // Update the table
+                updateTable();
+            }
+
+            // Add an event listener for the "Add Item" button
+            $("button.btn-outline-primary").click(addItem);
+        });
+
+    </script>
+</body>
+
+</html>
