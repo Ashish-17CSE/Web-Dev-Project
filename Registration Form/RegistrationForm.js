@@ -27,31 +27,7 @@ function readDate(){
     user["Message"] = document.getElementById("Message").value;
     
     // LOCAL STORAGE 
-    // localStorage.setItem(user.number, JSON.stringify(user))
-    
-    // POST Method with 'axios'
-    /*axios.post('https://crudcrud.com/api/2b5bcf8eed7048fdbe1639b17e7fdbf8/appointmentData', user)
-        .then((response) => {
-            console.log(response)
-        }).catch((err) => {
-            console.log(err)
-        })*/
-        
-        
-        // GET Method with 'axios'
-   axios.get('https://crudcrud.com/api/3cbfc79cf14948dc808edbd5847ed195/appointmentData', user)
-        .then((response) => {
-            console.log(response)
-            for (var i=0; i<response.data.length; i++){
-                insertdata(response.data[i])
-            }
-        }).catch((err) => {
-            console.log(err)
-        })
-        
-        
-        
-        
+    localStorage.setItem(user.number, JSON.stringify(user))
     return user;   
 }
 
