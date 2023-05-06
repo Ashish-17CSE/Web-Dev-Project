@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SavingUserDetailsOnCrud</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+
+
+
+    <div class="container">
+        <main class="my-5">
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6">
+                    <form class="">
+                        <div class="mb-3 ">
+                            <h1 class="text-center p-3 mb-2 bg-primary text-white rounded"> CRUD Registration Form</h1>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name :</label>
+                            <input type="name" id="name" placeholder="" class="form-control" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address :</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@gmail.com">
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label" >Password :</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="number" class="form-label">Phone :</label>
+                            <input type="number" id="number" placeholder="000-000-0000" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Branch :</label>
+                            <select class="form-select" id="subject" class="form-select">
+                                <option class="forrm-option" value="CSE">Computer Science Engineering</option>
+                                <option class="forrm-option" value="CIVIL">Civil engineering</option>
+                                <option class="forrm-option" value="ECE">Electronics and Communication Engineering</option>
+                                <option class="forrm-option" value="EE">Electrical Engineering</option>
+                                <option class="forrm-option" value="ME">Mechanical engineering</option>
+                                <option class="forrm-option" value="Other" selected>Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                            <textarea class="form-control" id="Message" rows="3" placeholder="Write any message"></textarea>
+                        </div>
+                        <!-- <div class="justify-content-center d-grid"> -->
+                        <div class="d-grid col-6 mx-auto md-3">
+                            <button type="button" class="btn btn-outline-success" value="Submit" id="submit">Submit</button>
+                        </div>
+                    </form>
+
+                    <div class="form-label form-control my-4">
+                        <h3 for="date" class="text-center p-2 mb-2 bg-dark text-white rounded">Input Data:</h3>
+                        <!-- <div class="border border-2 my-6 table"> -->
+                            <table class="table table-bordered border-secondary" id="list">
+                                <thead class="thead">
+                                    <tr class="text-center">
+                                        <th>No.</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                        <th>Phone</th>
+                                        <th>Branch</th>
+                                        <th>Massage</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            
+                        </div>
+                        <!-- <div class="my-4">
+                            <button type="button" class="btn btn-outline-danger" id="Delete" value="Delete">Delete</button>
+                            <button type="button" class="btn btn-outline-warning" id = "Edit" value="Edit">Edit</button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- <div class="content">
+        <div class="row justify-content-center my-5">
+            <div class="col-lg-6">
+                <div >Input Data :--</div>
+            </div>
+        </div>
+    </div> -->
+    
+</body>
+<!-- 'axios' module  -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- JavaScript File -->
+<script src="Crud.js"></script>
+</html>
