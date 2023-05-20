@@ -95,9 +95,17 @@ function editQuantity(row) {
     buttons.forEach(button => button.disabled = true);
   }
 
+  // Retrieve item details from table
+  const itemName = row.cells[1].textContent;
+  const description = row.cells[2].textContent;
+  const price = row.cells[3].textContent;
+  
   // Update quantity in crudcrud.com
   const item = {
-    quantity: newQuantity
+    quantity: newQuantity,
+    itemName,
+    description,
+    price
   };
   axios.put(`${baseURL}/items/${itemId}`, item)
     .then(response => {
