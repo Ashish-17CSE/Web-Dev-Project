@@ -1,0 +1,42 @@
+/* Custom CSS to make the page responsive */
+@media (max-width: 768px) {
+    .col {
+        margin-bottom: 10px;
+    }
+
+    .col-md-2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .col-md-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    /* Set a maximum width for the container */
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+/* Move the 'Add Item' button to the right side */
+#AddItemBtn {
+    float: right;
+}
+
+/* CSS to hide the first column (ID column) in the table */
+.table th:first-child,
+.table td:first-child {
+    display: none;
+}
+
+.table {
+    text-align: center;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
