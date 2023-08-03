@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiter</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+
+    <style>
+        /* Custom CSS to hide the 'ID' column */
+        .hide-id {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body class="m-4">
+    <div class="container">
+        <h2 class="header text-center text-white p-3 bg-success bg-gradient">Waiter's Life Easy</h2>
+        <!-- Select and Input Field  -->
+        <div class="border">
+            <form id="myForm">
+                <div class="row p-2 m-2">
+                    <!-- Select Table number -->
+                    <div class="col">
+                        <label class="form-label">Table No. :</label>
+                        <select id="TableNo" class="form-control form-select">
+                            <option selected hidden>Table No.</option>
+                            <option class="form-option" value="1">Table No. : 1</option>
+                            <option class="form-option" value="2">Table No. : 2</option>
+                            <option class="form-option" value="3">Table No. : 3</option>
+                        </select>
+                    </div>
+                    <!-- Choose Dish -->
+                    <div class="col">
+                        <label class="form-label">Choose Dish:</label>
+                        <input type="text" class="form-control" id="ChooseDish">
+                    </div>
+                    <!-- Enter Price -->
+                    <div class="col">
+                        <label class="form-label">Price:</label>
+                        <input type="number" class="form-control" id="Price">
+                    </div>
+                    <!-- Selec Quantity -->
+                    <div class="col">
+                        <label class="form-label">Quantity:</label>
+                        <select id="Quantity" class="form-control form-select">
+                            <option selected hidden>Quantity</option>
+                            <option class="form-option" value="FullPalet">Full</option>
+                            <option class="form-option" value="HafePalet">Hafe</option>
+                        </select>
+                    </div>
+                    <!-- Add Item Button-->
+                    <div class="col">
+                        <label class="form-label"></label>
+                        <div class="d-flex justify-content-end align-items-center">
+                            <button type="button" id="AddItemBtn" class="btn btn-success">Add Item</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- 1st Table -->
+        <div class="border mt-2">
+            <h3 class="header text-center text-white bg-primary bg-gradient">Orders for Table No. 1</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="1stTable">
+                    <thead class="table-primary table-striped text-center">
+                        <tr>
+                            <th class="hide-id">ID</th>
+                            <th>Choose Dish</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Delete Item</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableNo1Orders" class="table-no-1">
+                        <!-- Table No. 1 orders will be added dynamically here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2nd Table -->
+        <div class="border mt-2">
+            <h3 class="header text-center text-white bg-warning bg-gradient">Orders for Table No. 2</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="2ndTable">
+                    <thead class="table-warning table-striped text-center">
+                        <tr>
+                            <th class="hide-id">ID</th>
+                            <th>Choose Dish</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Delete Item</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableNo2Orders" class="table-no-2">
+                        <!-- Table No. 2 orders will be added dynamically here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3rd Table -->
+        <div class="border mt-2">
+            <h3 class="header text-center text-white bg-info bg-gradient">Orders for Table No. 3</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="3rdTable">
+                    <thead class="table-info table-striped text-center">
+                        <tr>
+                            <th class="hide-id">ID</th>
+                            <th>Choose Dish</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Delete Item</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableNo3Orders" class="table-no-3">
+                        <!-- Table No. 3 orders will be added dynamically here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 'axios' module -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./3Table_Script.js"></script>
+    </div>
+</body>
+
+</html>
