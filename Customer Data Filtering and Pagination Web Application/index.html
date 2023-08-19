@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Add Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class=" container my-4">
+        <!-- Heater and filter button -->
+        <div>
+            <div class="row mb-1 p-2 bg-success text-white">
+                <div class="col">
+                    <h2>CUSTOMERS</h2>
+                </div>
+            </div>
+            <div class="row border border-success">
+                <div class="col">
+                    <h4 class="pt-2">Dashboard</h4>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <button id="DashboardToggle" class="btn btn-light bg-transparent">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                </div>
+            </div>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+            <script>
+                $("#DashboardToggle").click(function () {
+                    $("#Dashboard").slideToggle(1000 / 2);
+                })
+            </script>
+        </div>
+
+        <!-- ------------------------------Filter content------------------------------------ -->
+        <div id="Dashboard" class="row mb-2 border border-success rounded-bottom">
+            <form id="myForm" class="m-3">
+                <!-- Sales Organization, Customer Name, Region, Reason and Country. -->
+                <div class="row mb-3 d-flex justify-content-center">
+                    <!-- Sales Organization -->
+                    <div class="col-md-2 mb-3">
+                        <label for="SalesOrgName" class="form-label">Sales Organization</label>
+                        <select id="SalesOrgName" class="select2 form-select">
+                            <option selected hidden>Sales Org Name</option>
+                        </select>
+                    </div>
+                    <!-- Customer Name -->
+                    <div class="col-md-2 mb-3">
+                        <label for="CustomerName" class="form-label">Customer Name</label>
+                        <select id="CustomerName" class="select2 form-select">
+                            <option selected>Select Customer Name</option>
+                        </select>
+                    </div>
+                    <!-- Select Region -->
+                    <div class="col-md-2 mb-3">
+                        <label for="Region" class="form-label">Region</label>
+                        <select id="Region" class="select2 form-select">
+                            <option selected>Select Region</option>
+                        </select>
+                    </div>
+                    <!-- Select Reason -->
+                    <div class="col-md-2 mb-3">
+                        <label for="Reason" class="form-label">Reason</label>
+                        <select id="Reason" class="select2 form-select">
+                            <option selected>Select Reason</option>
+                        </select>
+                    </div>
+                    <!-- Select Country -->
+                    <div class="col-md-2 mb-3">
+                        <label for="Country" class="form-label">Country</label>
+                        <select id="Country" class="select2 form-select">
+                            <option selected>Select Country</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Channel, Route, Customer Type, Customer Group/Chain and Classification. -->
+                <div class="row mb-3 d-flex justify-content-center">
+                    <!-- Channel -->
+                    <div class="col-md-2 mb-3">
+                        <label for="Channel" class="form-label">Channel</label>
+                        <select id="Channel" class="select2 form-select">
+                            <option selected>Select Channel</option>
+                        </select>
+                    </div>
+
+                    <!-- Route -->
+                    <div class="col-md-2 mb-3">
+                        <label for="Route" class="form-label">Route</label>
+                        <select id="Route" class="select2 form-select">
+                            <option selected>Select Route</option>
+                        </select>
+                    </div>
+
+                    <!-- Select Customer Type -->
+                    <div class="col-md-2 mb-3">
+                        <label for="CustomerType" class="form-label">Customer Type</label>
+                        <select id="CustomerType" class="select2 form-select">
+                            <option selected>Select Customer Type</option>
+                        </select>
+                    </div>
+
+                    <!-- Customer Group/Chain -->
+                    <div class="col-md-2 mb-3">
+                        <label for="CustomerChain" class="form-label">Customer Group/Chain</label>
+                        <select id="CustomerChain" class="select2 form-select">
+                            <option selected>Select Chain</option>
+                        </select>
+                    </div>
+
+                    <!-- Classification -->
+                    <div class="col-md-2 mb-3">
+                        <label for="Classification" class="form-label">Classification</label>
+                        <select id="Classification" class="select2 form-select">
+                            <option selected>Classification</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Business Unit, Account Name, Is Blocked?, Search and Reset Button. -->
+                <div class="row mb-3 d-flex justify-content-center">
+                    <!-- Business Unit -->
+                    <div class="col-md-2">
+                        <label for="BusinessUnit" class="form-label">Business Unit</label>
+                        <select id="BusinessUnit" class="select2 form-select">
+                            <option selected>Select Business Unit</option>
+                        </select>
+                    </div>
+
+                    <!-- Account Name -->
+                    <div class="col-md-2">
+                        <label for="AccountName" class="form-label">Account Name</label>
+                        <select id="AccountName" class="select2 form-select">
+                            <option selected>Select Account Name</option>
+                        </select>
+                    </div>
+
+                    <!-- Is Blocked? -->
+                    <div class="col-md-2">
+                        <input type="checkbox" id="IsBlocked" name="IsBlocked" class="mt-4 ml-4">
+                        <label for="IsBlocked" class="mt-4 fw-bolder">Is Blocked?</label>
+                    </div>
+
+                    <!-- Search Button -->
+                    <div class="col-md-2">
+                        <label hidden class="form-label"> Search Button</label>
+                        <button type="button" id="searchButton" class="btn btn-info form-select mt-4">Search</button>
+                    </div>
+
+                    <!-- Reset Button -->
+                    <div class="col-md-2">
+                        <label hidden class="form-label">Reset Button</label>
+                        <button type="button" id="resetButton" class="btn btn-danger form-select mt-4">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Table and pagination -->
+        <div class="row mt-2">
+            <table id="myTable" class="table table-bordered text-center table-striped">
+                <thead class="table-success">
+                    <tr>
+                        <th scope="col-md-2" data-field="customerId">Customer ID</th>
+                        <th scope="col-md-2" data-field="customerName">Customer Name</th>
+                        <th scope="col-md-2" data-field="region">Region</th>
+                        <th scope="col-md-2" data-field="country">Country</th>
+                        <th scope="col-md-2" data-field="customerType">Customer Type</th>
+                        <th scope="col-md-2" data-field="isBlocked">Is Blocked?</th>
+                    </tr>
+                </thead>
+                <tbody id="myData">
+                </tbody>
+            </table>
+        </div>
+        <div id="pagination" class="d-flex justify-content-center">
+            <button id="prevPage" class="btn btn-outline-info mr-2">&lt; Prev</button>
+            <!-- Page number buttons will be added dynamically here -->
+            <button id="nextPage" class="btn btn-outline-info ml-2">Next &gt;</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
